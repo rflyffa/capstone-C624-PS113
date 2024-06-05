@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.4s, background-color 0.4s; 
+  color: #ffffff; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #ffffff;
+  transition: width 0.3s ease, background-color 0.4s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+  left: 0;
+  background: #f8f9fa;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.carousel,
+.carousel-inner {
+  height: 100vh;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  text-align: center;
+}
+
+.carousel-caption h1,
+.carousel-caption h2,
+.carousel-caption p {
+  margin-bottom: 0.2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.text-center.mt-5 {
+  margin-top: 50px;
+}
+
+/*  */
+.offcanvas-title {
+  color: #ffffff;
+}
+
+.offcanvas.offcanvas-end .offcanvas-body {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.offcanvas-header {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand img {
+  max-width: 70px;
+  height: auto;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+/* */
+.cta-section {
+  background-color: #b3bbc4;
+  padding: 0px 0;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 50px;
+}
+
+.cta-section img {
+  max-width: 50%;
+  height: auto;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.cta-section .btn {
+  background-color: #007bff;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.cta-section .btn:hover {
+  background-color: #0056b3;
+}
+
+/*  */
+.stats-section {
+  background-color: #e9ecef;
+  padding: 60px 0;
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.stats-section h3 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #343a40;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.stats-section .stats-item {
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.stats-section .stats-item:hover {
+  transform: translateY(-10px);
+}
+
+.stats-section h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.stats-section small {
+  font-size: 1.0rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*  */
+.how-to-use-section {
+  padding: 50px 0;
+}
+
+.how-to-use-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.how-to-use-section .row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.how-to-use-section img {
+  width: 300px;
+  height: 200px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover; 
+}
+
+.how-to-use-section h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.how-to-use-section p {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+
+
+/*  */
+.simple-planning-section {
+  background-color: #ffcccb;
+  padding: 50px 0;
+  margin-bottom: 0px;
+}
+
+.simple-planning-section h2 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.simple-planning-section .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.simple-planning-section img {
+  max-width: 80%;
+  height: auto;
+  margin: 20px;
+  margin-bottom: 0%;
+}
+
+
+/*  */
+.footer {
+  background: #343a40;
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9), 0 6px 200px #343a40;
+}
+
+.footer a {
+  color: #ffffff;
+}
+
+.footer a:hover {
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+.footer .social-icon i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+.footer .social-icon i:hover {
+  color: #000000;
+}
+
+@media only screen and (min-width: 1200px) {
+  .offcanvas.offcanvas-end .offcanvas-body {
+      background: rgba(0, 0, 0, 0.0) !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .offcanvas.offcanvas-end .offcanvas-body {
+      background: rgba(0, 0, 0, 0.0) !important;
+  }
+}
+
+

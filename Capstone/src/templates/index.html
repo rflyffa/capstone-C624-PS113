@@ -8,10 +8,15 @@
 
     <link rel="icon" href="images/heros/logo.png">
 
-    <!-- Style CSS -->
+    <!--Style CSS-->
     <link rel="stylesheet" href="src/styles/main.css" />
 
-    <!-- Bootstrap CSS -->
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -19,20 +24,184 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <header>
-        <!-- Your navbar component will be rendered here -->
-        <div></div>
-    </header>
 
-    <!-- Main content -->
-    <main>
-        <!-- Your main content will go here -->
-    </main>
+    <!-- Skip-Link -->
+    <a href="#cta-section" class="skip-link">Skip To Content</a>
 
-    <!-- Footer -->
-    <footer>
-        <!-- Your footer content will go here -->
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-4" href="index.html"><img src="images/heros/logo.png" alt="JAVENTURE Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">JAVENTURE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="destination.html">Destination</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Wrapper -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+        <!-- Carousel Inner -->
+        <div class="carousel-inner">
+            <!-- First Slide -->
+            <div class="carousel-item active">
+                <img src="images/heros/slider1.jpg" class="d-block w-100" alt="First slide">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                    <h1>Selamat Datang di Jawa Tengah</h1>
+                    <p class="mt-3">Destinasi Eksotis dan Pengalaman Tak Terlupakan Menanti Anda</p>
+                </div>
+            </div>
+            <!-- Second Slide -->
+            <div class="carousel-item">
+                <img src="images/heros/slider2.jpg" class="d-block w-100" alt="Second slide">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                    <h1>Petualangan Dimulai di Sini</h1>
+                    <p class="mt-3">Jelajahi Dunia Baru dan Buat Kenangan Seumur Hidup</p>
+                </div>
+            </div>
+            <!-- Third Slide -->
+            <div class="carousel-item">
+                <img src="images/heros/slider3.jpg" class="d-block w-100" alt="Third slide">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                    <h1>Temukan Pesona Tersembunyi</h1>
+                    <p class="mt-3">Destinasi Eksotis dan Pengalaman Tak Terlupakan Menanti Anda</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Section -->
+    <section id="cta-section" class="cta-section text-center my-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="images/heros/Explorer.png" alt="Explorer" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h2>Jelajahi Jawa Tengah SEKARANG!</h2>
+                    <button class="btn btn-primary btn-lg mt-3">AYO!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section text-center py-5 bg-light">
+        <div class="container">
+            <h3 class="mb-5">Dengan lebih dari</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>10.000+<br><small>hotel & resort</small></h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>3000+<br><small>restaurant</small></h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>2000+<br><small>Tempat wisata</small></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="how-to-use-section text-center my-5">
+        <div class="container">
+            <h2 class="mb-5">Destinasi</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="images/heros/image1.png" alt="Step 1" class="img-fluid">
+                    <h4 class="mt-3">01</h4>
+                    <p>Tentukan durasi liburan.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/heros/image2.png" alt="Step 2" class="img-fluid">
+                    <h4 class="mt-3">02</h4>
+                    <p>Tentukan jumlah orang yang kamu ajak.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/heros/image3.png" alt="Step 3" class="img-fluid">
+                    <h4 class="mt-3">03</h4>
+                    <p>Tentukan estimasi budget kamu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Planning Section -->
+    <section class="simple-planning-section text-center my-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="images/heros/Simple Planning.png" alt="Simple Planning" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mt-3">Jadi Gaperlu Bingung Rencanain Liburan Kamu.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>We are committed to providing complete and accurate information to local and international tourists about tourist destinations, culture, culinary experiences, and various interesting activities that can be enjoyed in Central Java</p>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="destination.html">Destination</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Street, Jawa Tengah, Indonesia</li>
+                        <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> info@example.com</li>
+                    </ul>
+                    <!-- Social Icons -->
+                    <div class="social-icon">
+                        <a href="https://www.instagram.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>JAVENTURE &copy; 2024. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS and dependencies -->
@@ -40,11 +209,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Custom JS -->
-    <script src="scripts/index.js"></script>
-    <script>
+    <script src="src/scripts/index.js"></script>
 
-    </script>
+
 </body>
 
 </html>

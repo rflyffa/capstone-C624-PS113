@@ -15,10 +15,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/base.min.css" rel="stylesheet" />
 
     <title>JAVENTURE</title>
 </head>
@@ -53,76 +55,48 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="destination.html">Destination</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ticket.html">Ticket Saya</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Carousel Wrapper -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
-        <!-- Carousel Inner -->
-        <div class="carousel-inner">
-            <!-- First Slide -->
-            <div class="carousel-item active">
-                <img src="images/heros/slider1.jpg" class="d-block w-100" alt="First slide">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                    <h1>Selamat Datang di Jawa Tengah</h1>
-                    <p class="mt-3">Destinasi Eksotis dan Pengalaman Tak Terlupakan Menanti Anda</p>
-                </div>
+    <!-- Main Content -->
+    <main id="card-detail" class="container mt-5 pt-5">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h1 class="card-title">Detail Information</h1>
             </div>
-            <!-- Second Slide -->
-            <div class="carousel-item">
-                <img src="images/heros/slider2.jpg" class="d-block w-100" alt="Second slide">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                    <h1>Petualangan Dimulai di Sini</h1>
-                    <p class="mt-3">Jelajahi Dunia Baru dan Buat Kenangan Seumur Hidup</p>
-                </div>
-            </div>
-            <!-- Third Slide -->
-            <div class="carousel-item">
-                <img src="images/heros/slider3.jpg" class="d-block w-100" alt="Third slide">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                    <h1>Temukan Pesona Tersembunyi</h1>
-                    <p class="mt-3">Destinasi Eksotis dan Pengalaman Tak Terlupakan Menanti Anda</p>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="card-body overflow-y-auto">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img id="detail-image" src="" alt="Deskripsi Gambar" class="img-fluid w-100">
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="card-title">Nama Tempat</h5>
+                        <p id="detail-name" class="card-text"></p>
 
-<!-- Main Content -->
-<main id="card-detail" class="container mt-5 pt-5">
-    <div class="card mb-4">
-        <div class="card-header">
-            <h1 class="card-title">Detail Information</h1>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="images/heros/slider1.jpg" alt="Deskripsi Gambar" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <h5 class="card-title">Nama Tempat</h5>
-                    <p class="card-text">Nama tempat wisata.</p>
+                        <h5 class="card-title">Deskripsi</h5>
+                        <p id="detail-description" class="card-text"></p>
 
-                    <h5 class="card-title">Deskripsi</h5>
-                    <p class="card-text">Deskripsi lengkap mengenai tempat wisata.</p>
+                        <h5 class="card-title">Review</h5>
+                        <p id="detail-review" class="card-text"></p>
 
-                    <h5 class="card-title">Review</h5>
-                    <p class="card-text">Ulasan pengunjung mengenai tempat wisata.</p>
+                        <h5 class="card-title">Harga Tiket</h5>
+                        <p id="detail-price" class="card-text"></p>
 
-                    <h5 class="card-title">Harga Tiket</h5>
-                    <p class="card-text">Harga tiket atau biaya untuk mengunjungi tempat wisata.</p>
+                        <h5 class="card-title">Lokasi</h5>
+                        <p id="detail-location" class="card-text"></p>
 
-                    <h5 class="card-title">Lokasi</h5>
-                    <p class="card-text">Alamat lengkap atau koordinat lokasi tempat wisata.</p>
+                        <button onclick="handlePesan()" type="button" class="btn btn-primary w-100">Beli Tiket</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
-
-
+    </main>
 
     <!--Footer-->
     <footer class="footer">
@@ -131,7 +105,9 @@
                 <!-- About Section -->
                 <div class="col-md-4">
                     <h5>About Us</h5>
-                    <p>We are committed to providing complete and accurate information to local and international tourists about tourist destinations, culture, culinary experiences, and various interesting activities that can be enjoyed in Central Java.</p>
+                    <p>We are committed to providing complete and accurate information to local and international
+                        tourists about tourist destinations, culture, culinary experiences, and various interesting
+                        activities that can be enjoyed in Central Java.</p>
                 </div>
                 <!-- Quick Links -->
                 <div class="col-md-4">
@@ -174,6 +150,50 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="src/scripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/lib/index.min.js"></script>
 
+    <script>
+        function handlePesan(){
+            const param = new URLSearchParams(window.location.search);
+            const id = param.get('id');
+            window.location.href = 'booking.html?id=' + id
+        }
+        async function fetchData(id) {
+            try {
+                const response = await fetch(`https://api.javenture.site/destinations/${id}`); // Replace with your API URL
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                return data; // Return JSON data from API
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return {}; // Return empty object if error occurs
+            }
+        }
+
+        async function renderDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (!id) {
+                console.error('ID parameter is missing');
+                return;
+            }
+
+            const data = await fetchData(id);
+
+            // Update HTML elements with data
+            document.getElementById('detail-image').src = data.hero_image;
+            document.getElementById('detail-name').textContent = data.name;
+            document.getElementById('detail-description').textContent = data.description;
+            document.getElementById('detail-review').textContent = data.rating ? `Rating: ${data.rating}` : 'No reviews yet';
+            document.getElementById('detail-price').innerHTML = data.price;
+            document.getElementById('detail-location').textContent = data.location;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDetail();
+        });
+    </script>
 </body>
+
 </html>

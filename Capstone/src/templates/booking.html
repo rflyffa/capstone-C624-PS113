@@ -1,5 +1,12 @@
 <html>
   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <link rel="icon" href="images/heros/logo.png">
+      <title>JAVENTURE</title>
+      <!--Style CSS-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
@@ -7,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../styles/booking.css" />
+    <link rel="stylesheet" href="css/booking.css" />
   </head>
 
   <body>
@@ -21,7 +28,7 @@
                   <div class="col">
                     <img
                       class="irc_mi img-fluid cursor-pointer"
-                      src="../public/images/heros/logo.png"
+                      src="images/heros/logo.png"
                       width="70"
                       height="70"
                     />
@@ -34,8 +41,8 @@
                 <nav aria-label="breadcrumb" class="second">
                   <ol class="breadcrumb indigo lighten-6 first">
                     <li class="breadcrumb-item font-weight-bold">
-                      <a class="black-text text-uppercase" href="#"
-                        ><span class="mr-md-3 mr-1">BACK TO SHOP</span></a
+                      <a class="black-text text-uppercase" href="index.html"
+                        ><span class="mr-md-3 mr-1">BACK TO HOME</span></a
                       >
                       <i
                         class="fa fa-angle-double-right"
@@ -44,7 +51,7 @@
                     </li>
                     <li class="breadcrumb-item font-weight-bold">
                       <a class="black-text text-uppercase active-2" href="#"
-                        ><span class="mr-md-3 mr-1">CHECKOUT</span></a
+                        ><span class="mr-md-3 mr-1">PESAN TIKET</span></a
                       >
                     </li>
                   </ol>
@@ -203,7 +210,7 @@
     <script type="text/javascript">
       var apiUrl = ''
       if (window.location.hostname === 'localhost') {
-        apiUrl = 'http://localhost:8080'
+        apiUrl = 'https://api.javenture.site'
       } else {
         apiUrl = 'https://api.javenture.site'
       }

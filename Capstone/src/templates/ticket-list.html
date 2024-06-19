@@ -1,15 +1,102 @@
-<div
-    class="w-full min-h-[100px] bg-[#FFF] border-[3px] flex flex-row shadow-md border-[#E0E0E0] rounded-[20px] text-white overflow-y-auto">
-    <div class="w-[50%] h-full flex flex-col justify-start items-start p-[20px]">
-        <h1 class="text-[20px] font-bold text-black">Tiket ke </h1>
-        <h1 class="text-[14px] font-reguler text-black">Ticket ID : </h1>
-    </div>
-    <div class="w-[50%] h-full flex flex-row justify-start items-center p-[20px]">
-        <div class="w-[50%] flex flex-row justify-end items-end">
-            <h1 class="text-[20px] font-bold text-black">2 Orang</h1>
+<!-- transaction-list.html -->
+<div id="booking-container"></div>
+
+<script>
+  var data = []
+  var apiUrl = ''
+  if (window.location.hostname === 'localhost') {
+    apiUrl = 'https://api.javenture.site'
+  } else {
+    apiUrl = 'https://api.javenture.site'
+  }
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const transactionIds = await loadTransactionIdsFromIndexDb()
+
+      const response = await fetch(`${apiUrl}/transactions/validate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ transaction_id: transactionIds }),
+      })
+      console.log(response)
+      const tickets = await response.json()
+      data = tickets
+      console.log(data)
+      displayTickets(tickets)
+    } catch (error) {
+      console.error('Error:', error)
+    }
+  })
+
+  async function loadTransactionIdsFromIndexDb() {
+    return new Promise((resolve, reject) => {
+      var db
+      var request = indexedDB.open('transactions_db', 1)
+
+      request.onerror = function (event) {
+        reject('Database error: ' + event.target.errorCode)
+      }
+
+      request.onsuccess = function (event) {
+        db = event.target.result
+        var transaction = db.transaction(['transactions'], 'readonly')
+        var objectStore = transaction.objectStore('transactions')
+
+        var keysRequest = objectStore.getAllKeys()
+
+        keysRequest.onsuccess = function (event) {
+          resolve(event.target.result)
+        }
+
+        keysRequest.onerror = function (event) {
+          reject('Error fetching keys: ' + event.target.errorCode)
+        }
+      }
+
+      request.onupgradeneeded = function (event) {
+        db = event.target.result
+        db.createObjectStore('transactions', { keyPath: 'id' })
+      }
+    })
+  }
+
+  function displayTickets(tickets) {
+    const container = document.getElementById('booking-container')
+
+    tickets.forEach((ticket) => {
+      const ticketCard = document.createElement('div')
+      ticketCard.className = 'ticket-card'
+
+      let buttonHTML
+      if (ticket.status === 'Pending') {
+        buttonHTML = `<button class="w-[150px] h-[40px] bg-[#000] rounded-[20px] text-white" onclick="openTransactionUrl('${ticket.snap_url}')">Bayar Sekarang</button>`
+      } else if (ticket.status === 'Berhasil') {
+        buttonHTML = `<button class="w-[150px] h-[40px] bg-[#4CAF50] rounded-[20px] text-white" disabled>Sudah Dibayar</button>`
+      }
+
+      ticketCard.innerHTML = `
+        <div class="w-full min-h-[100px] bg-[#FFF] border-[3px] flex flex-row shadow-md border-[#E0E0E0] rounded-[20px] text-white overflow-y-auto">
+          <div class="w-[50%] h-full flex flex-col justify-start items-start p-[20px]">
+            <h1 class="text-[20px] font-bold text-black">Tiket ke ${ticket.destination.name}</h1>
+            <h1 class="text-[14px] font-reguler text-black">ID Transaksi : ${ticket.id}</h1>
+          </div>
+          <div class="w-[50%] h-full flex flex-row justify-start items-center p-[20px]">
+            <div class="w-[50%] flex flex-row justify-end items-end">
+              <h1 class="text-[20px] font-bold text-black">${ticket.ticket_qty} Orang</h1>
+            </div>
+            <div class="w-[50%] flex flex-row justify-end items-end">
+              ${buttonHTML}
+            </div>
+          </div>
         </div>
-        <div class="w-[50%] flex flex-row justify-end items-end">
-            <button class="w-[150px] h-[40px] bg-[#000] rounded-[20px] text-white">Cetak Tiket</button>
-        </div>
-    </div>
-</div>
+      `
+
+      container.appendChild(ticketCard)
+    })
+  }
+  function openTransactionUrl(url) {
+    window.open(url, '_blank')
+  }
+</script>
